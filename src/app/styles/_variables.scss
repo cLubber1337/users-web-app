@@ -1,0 +1,25 @@
+:root {
+  //colors
+  --clr-main: #dcd8d3;
+  --clr-secondary: #8c8988;
+  --clr-charcoal-gray: #303238;
+  --clr-coral: #cf7b5a;
+  --clr-midnight: #12141b;
+  --clr-midnight-blue: #1a1c23;
+  --clr-nightfall: #1e2027;
+  --clr-ruby-red: #ff2c47;
+  --salmon-blush: rgb(255 44 71 / 20%);
+  --clr-peach-blush: rgb(207 123 90 / 20%);
+
+  //borders
+  --border-radius: 1rem;
+  --border-card-active: 1px solid var(--clr-coral);
+
+  //layout
+  --container-padding-x: 2rem;
+  --container-width: 100%;
+  --aside-width: 332px;
+
+  //fonts
+  --font-family-primary: 'Jura', sans-serif;
+}
