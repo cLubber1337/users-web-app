@@ -8,6 +8,9 @@ dependencies:
   '@fontsource/jura':
     specifier: ^5.0.20
     version: 5.0.20
+  clsx:
+    specifier: ^2.1.1
+    version: 2.1.1
   react:
     specifier: ^18.2.0
     version: 18.3.1
@@ -1427,6 +1430,11 @@ packages:
       is-regexp: 1.0.0
       is-supported-regexp-flag: 1.0.1
     dev: true
+
+  /clsx@2.1.1:
+    resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
+    engines: {node: '>=6'}
+    dev: false
 
   /collapse-white-space@1.0.6:
     resolution: {integrity: sha512-jEovNnrhMuqyCcjfEJA56v0Xq8SkIoPKDyaHahwo3POf4qcSXqMYuwNcOTzp74vTsR9Tn08z4MxWqAhcekogkQ==}

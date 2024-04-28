@@ -28,7 +28,16 @@ body,
   Убираем внешние отступы вертикали нужным тегам,
   у которых есть атрибут class
  */
-:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl):where([class]) {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl {
   margin-block: 0;
 }
 
@@ -56,7 +65,7 @@ body,
   чтобы избежать взаимодействие с более сложным селектором
  */
 p {
-  --paragraph-margin-bottom: 24px;
+  --paragraph-margin-bottom: 0;
 
   margin-block: 0;
 }

@@ -1,7 +1,9 @@
+import { UserCard } from '../entities/user-card/user-card';
+
 function App() {
   return (
-    <div>
-      <h1 className='title'>Hello!</h1>
+    <div style={{ margin: '100px' }}>
+      <UserCard />
     </div>
   );
 }

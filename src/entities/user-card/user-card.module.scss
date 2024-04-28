@@ -1,0 +1,14 @@
+.userCard {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  background-color: var(--clr-midnight-blue);
+  border: 1px solid var(--clr-midnight-blue);
+  border-radius: var(--border-radius);
+
+  &-Selected {
+    background-color: var(--clr-nightfall);
+    border: 1px solid var(--clr-peach-blush);
+  }
+}

@@ -1,0 +1,13 @@
+.UserCardDescription {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 16px;
+  row-gap: 12px;
+}
+
+.field {
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 1.7;
+  color: var(--clr-secondary);
+}

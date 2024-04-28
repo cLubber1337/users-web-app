@@ -1,0 +1,17 @@
+.userCardHeader {
+  display: flex;
+  column-gap: 16px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.userName {
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
