@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './styles/main.scss';
+import '@fontsource/jura/400.css';
+import '@fontsource/jura/500.css';
+import '@fontsource/jura/600.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
