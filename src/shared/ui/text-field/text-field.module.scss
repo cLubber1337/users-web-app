@@ -1,0 +1,19 @@
+.input {
+  min-width: 332px;
+  padding: 14px 16px 14px 8px;
+  color: var(--clr-main);
+  line-height: 1.5;
+  background-color: var(--clr-nightfall);
+  border: 1px solid var(--clr-nightfall);
+  border-radius: var(--border-radius);
+  outline: none;
+
+  &:focus {
+    border-color: var(--clr-peach-blush);
+  }
+
+  &::placeholder {
+    color: var(--clr-secondary);
+    line-height: 1.5;
+  }
+}

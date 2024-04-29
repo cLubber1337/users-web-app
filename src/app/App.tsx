@@ -1,9 +1,9 @@
-import { UserCard } from '@entities/user-card';
+import { TextField } from '@shared/ui/text-field/text-field';
 
 function App() {
   return (
     <div style={{ margin: '100px' }}>
-      <UserCard />
+      <TextField placeholder={'Search'} />
     </div>
   );
 }
