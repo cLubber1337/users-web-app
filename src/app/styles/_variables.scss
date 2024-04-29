@@ -12,14 +12,19 @@
   --clr-salmon-blush: rgb(255 44 71 / 20%);
   --clr-peach-blush: rgb(207 123 90 / 20%);
 
+  //scrollbar
+  --scrollbar-thumb: #7a7a7a;
+  --scrollbar-track: rgb(232 232 232 / 10%);
+  --scrollbar-width: 4px;
+  --scrollbar-radius: 100px;
+
   //borders
   --border-radius: 1rem;
   --border-card-active: 1px solid var(--clr-coral);
 
   //layout
-  --container-padding-x: 2rem;
-  --container-width: 100%;
-  --aside-width: 332px;
+  --global-wrapper-padding-x: 2rem;
+  --global-wrapper-width: 100%;
 
   //fonts
   --font-family-primary: 'Jura', sans-serif;

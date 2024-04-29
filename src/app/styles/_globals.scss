@@ -1,14 +1,14 @@
 body {
+  color: var(--clr-main);
+  font-weight: 500;
   font-size: 0.875rem;
   font-family: var(--font-family-primary);
   line-height: 1.4;
   background-color: var(--clr-midnight);
-  color: var(--clr-main);
-  font-weight: 500;
 }
 
-.container {
-  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+.global-wrapper {
+  max-width: calc(var(--global-wrapper-width) + var(--global-wrapper-padding-x) * 2);
   margin-inline: auto;
-  padding-inline: var(--container-padding-x);
+  padding-inline: var(--global-wrapper-padding-x);
 }

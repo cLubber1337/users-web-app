@@ -1,9 +1,9 @@
-import { TextField } from '@shared/ui/text-field/text-field';
+import { UsersPage } from '@pages/users-page';
 
 function App() {
   return (
-    <div style={{ margin: '100px' }}>
-      <TextField placeholder={'Search'} />
+    <div className={'global-wrapper'}>
+      <UsersPage />
     </div>
   );
 }
