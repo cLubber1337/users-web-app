@@ -1,5 +1,5 @@
 import s from './user-card-header.module.scss';
-import { Avatar } from '../../../shared/ui';
+import { Avatar } from '@shared/ui';
 
 type Props = {
   image: string;

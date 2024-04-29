@@ -1,0 +1,5 @@
+@import '@/app/styles/mixins';
+
+.button {
+  @include reset-button;
+}

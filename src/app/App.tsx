@@ -1,4 +1,4 @@
-import { UserCard } from '../entities/user-card/user-card';
+import { UserCard } from '@entities/user-card';
 
 function App() {
   return (

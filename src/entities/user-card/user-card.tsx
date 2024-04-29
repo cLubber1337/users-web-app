@@ -1,12 +1,12 @@
 import s from './user-card.module.scss';
-import { UserCardHeader } from './user-card-header/user-card-header';
-import { UserCardDescription } from './user-card-description/user-card-description';
+import { UserCardHeader } from '@entities/user-card/user-card-header';
+import { UserCardDescription } from '@entities/user-card/user-card-description';
+import { CardDeleteButton } from '@features/card-delete-button/card-delete-button';
 
-type Props = {};
-
-export const UserCard = ({}: Props) => {
+export const UserCard = () => {
   return (
     <article className={s.userCard}>
+      <CardDeleteButton className={s.deleteCardButton} />
       <header className={s.header}>
         <UserCardHeader
           image={'https://makeavatar.io/svgavatars/images/Male.webp'}
