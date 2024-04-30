@@ -4,11 +4,11 @@ import { useGetUsersList, UsersList } from '@widgets/users-list';
 import { UsersPageSidebar } from '@widgets/users-page-sidebar';
 
 export const UsersPage = () => {
-  const { isPending, isError, data, error } = useGetUsersList(10);
+  const { isPending, isError, data, error, refetch } = useGetUsersList(10);
 
   return (
     <UsersPageWrapper
-      header={<UsersPageHeader />}
+      header={<UsersPageHeader refetchUsersList={refetch} />}
       main={
         <>
           {isPending ? (

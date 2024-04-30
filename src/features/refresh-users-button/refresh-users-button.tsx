@@ -1,6 +1,16 @@
 import s from './refresh-users-button.module.scss';
 import { Button } from '@shared/ui';
 
-export const RefreshUsersButton = () => {
-  return <Button className={s.button}>Refresh Users</Button>;
+type Props = {
+  onClick: () => void;
+};
+
+export const RefreshUsersButton = ({ onClick }: Props) => {
+  return (
+    <Button
+      className={s.button}
+      onClick={onClick}>
+      Refresh Users
+    </Button>
+  );
 };

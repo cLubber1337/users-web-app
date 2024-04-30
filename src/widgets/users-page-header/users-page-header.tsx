@@ -2,11 +2,15 @@ import s from './users-page-header.module.scss';
 import { TextField } from '@shared/ui';
 import { RefreshUsersButton } from '@features/refresh-users-button';
 
-export const UsersPageHeader = () => {
+type Props = {
+  refetchUsersList: () => void;
+};
+
+export const UsersPageHeader = ({ refetchUsersList }: Props) => {
   return (
     <div className={s.header}>
       <TextField placeholder={'search'} />
-      <RefreshUsersButton />
+      <RefreshUsersButton onClick={refetchUsersList} />
     </div>
   );
 };
