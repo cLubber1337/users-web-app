@@ -1,17 +1,32 @@
 import s from './user-card.module.scss';
+import { CardDeleteButton } from '@features/card-delete-button';
 import { UserCardHeader } from '@entities/user-card/user-card-header';
 import { UserCardDescription } from '@entities/user-card/user-card-description';
-import { CardDeleteButton } from '@features/card-delete-button/card-delete-button';
+import clsx from 'clsx';
+import { memo } from 'react';
 
-export const UserCard = () => {
+type Props = {
+  selectCard: (id: number) => void;
+  id: number;
+  isSelectedCard: boolean;
+};
+
+export const UserCard = memo(({ selectCard, id, isSelectedCard }: Props) => {
+  console.log('render---> user-card');
+
+  const selectCardHandler = () => {
+    selectCard(id);
+  };
   return (
-    <article className={s.userCard}>
-      <CardDeleteButton className={s.deleteCardButton} />
+    <article className={clsx(s.userCard, isSelectedCard && s.userCardSelected)}>
+      {isSelectedCard && <CardDeleteButton className={s.deleteCardButton} />}
       <header className={s.header}>
         <UserCardHeader
           image={'https://makeavatar.io/svgavatars/images/Male.webp'}
           userName={'John Doe'}
           email={'w6NkA@example.com'}
+          selectCard={selectCardHandler}
+          isSelected={isSelectedCard}
         />
       </header>
       <section className={s.description}>
@@ -23,4 +38,4 @@ export const UserCard = () => {
       </section>
     </article>
   );
-};
+});

@@ -7,7 +7,7 @@
     'main   aside';
   grid-template-columns: 1fr auto;
   padding-bottom: var(--users-page-padding-x);
-  column-gap: 1rem;
+  column-gap: 6px;
 }
 
 .header {

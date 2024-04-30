@@ -1,10 +1,26 @@
+.wrapper {
+  --shadow-height: 32px;
+  --list-padding-right: 6px;
+
+  position: relative;
+}
+
 .usersList {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(332px, 1fr));
   gap: 16px;
+  align-content: start;
   align-items: start;
-  height: calc(100vh - 107px - var(--users-page-padding-x));
+  height: calc(100vh - var(--header-height) - var(--users-page-padding-x));
+  margin-top: calc(-1 * var(--shadow-height));
+  margin-bottom: calc(-1 * var(--shadow-height));
+  padding-right: var(--list-padding-right);
   overflow-y: auto;
+  scrollbar-gutter: stable;
+
+  &Selected {
+    overflow-y: hidden;
+  }
 
   &::-webkit-scrollbar {
     width: var(--scrollbar-width);
@@ -18,5 +34,41 @@
   &::-webkit-scrollbar-thumb {
     background-color: var(--scrollbar-thumb);
     border-radius: var(--scrollbar-radius);
+  }
+}
+
+.usersList1 {
+  margin-top: calc(-1 * var(--shadow-height));
+}
+
+.usersListSelected,
+.usersList0 {
+  margin-top: 0;
+}
+
+.usersList99 {
+  margin-bottom: calc(-1 * var(--shadow-height));
+}
+
+.usersListSelected,
+.usersList100 {
+  margin-bottom: 0;
+}
+
+.shadow {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: calc(100% - var(--list-padding-right) - var(--scrollbar-width));
+  height: var(--shadow-height);
+  background: linear-gradient(0deg, rgb(18 20 27 / 0%), rgb(18 20 27) 100%);
+
+  &Top {
+    top: 0;
+  }
+
+  &Bottom {
+    bottom: 0;
+    transform: rotate(180deg);
   }
 }

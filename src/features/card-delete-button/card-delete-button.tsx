@@ -1,7 +1,6 @@
-import { Button } from '@/shared/ui/button/button';
-import { DeleteIcon } from '@shared/ui/icons/delete-icon';
 import s from './card-delete-button.module.scss';
 import clsx from 'clsx';
+import { Button, DeleteIcon } from '@shared/ui';
 
 type Props = {
   className?: string;
