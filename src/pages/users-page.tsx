@@ -1,10 +1,10 @@
 import { UsersPageWrapper } from '@widgets/users-page-wrapper';
 import { UsersPageHeader } from '@widgets/users-page-header';
-import { useGetUsersList, UsersList } from '@widgets/users-list';
+import { useUserManagement, UsersList } from '@widgets/users-list';
 import { UsersPageSidebar } from '@widgets/users-page-sidebar';
 
 export const UsersPage = () => {
-  const { isPending, isError, data, error, refetch } = useGetUsersList(10);
+  const { isPending, data, error, refetch, deleteUser } = useUserManagement(10);
 
   return (
     <UsersPageWrapper
@@ -13,10 +13,13 @@ export const UsersPage = () => {
         <>
           {isPending ? (
             <div>Loading...</div>
-          ) : isError ? (
+          ) : error ? (
             <div>{error.message}</div>
           ) : (
-            <UsersList users={data} />
+            <UsersList
+              users={data}
+              deleteUser={deleteUser}
+            />
           )}
         </>
       }

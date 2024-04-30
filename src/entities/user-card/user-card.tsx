@@ -11,18 +11,27 @@ type Props = {
   user: IUser;
   selectCard: (id: string) => void;
   isSelectedCard: boolean;
+  deleteUser: (id: string) => void;
 };
 
-export const UserCard = memo(({ selectCard, isSelectedCard, user }: Props) => {
+export const UserCard = memo(({ selectCard, isSelectedCard, deleteUser, user }: Props) => {
   const { login, email, dob, name, phone, location } = user;
   console.log('render---> user-card');
 
   const selectCardHandler = () => {
     selectCard(login.uuid);
   };
+  const deleteUserHandler = () => {
+    deleteUser(login.uuid);
+  };
   return (
     <article className={clsx(s.userCard, isSelectedCard && s.userCardSelected)}>
-      {isSelectedCard && <CardDeleteButton className={s.deleteCardButton} />}
+      {isSelectedCard && (
+        <CardDeleteButton
+          className={s.deleteCardButton}
+          onDelete={deleteUserHandler}
+        />
+      )}
       <header className={s.header}>
         <UserCardHeader
           image={'https://makeavatar.io/svgavatars/images/Male.webp'}

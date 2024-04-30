@@ -5,9 +5,10 @@ import clsx from 'clsx';
 
 type Props = {
   users: IUser[];
+  deleteUser: (userId: string) => void;
 };
 
-export const UsersList = ({ users }: Props) => {
+export const UsersList = ({ users, deleteUser }: Props) => {
   const [idSelectedCard, setIdSelectedCard] = useState<string | null>(null);
   const [scrollTop, setScrollTop] = useState(0);
 
@@ -46,6 +47,7 @@ export const UsersList = ({ users }: Props) => {
               user={user}
               selectCard={selectCard}
               isSelectedCard={idSelectedCard === user.login.uuid}
+              deleteUser={deleteUser}
             />
           );
         })}
