@@ -4,7 +4,7 @@ import { useUserManagement, UsersList } from '@widgets/users-list';
 import { UsersPageSidebar } from '@widgets/users-page-sidebar';
 
 export const UsersPage = () => {
-  const { isPending, data, error, refetch, deleteUser } = useUserManagement(10);
+  const { isPending, data, error, refetch, deleteUser, userStatistics } = useUserManagement(10);
 
   return (
     <UsersPageWrapper
@@ -23,7 +23,7 @@ export const UsersPage = () => {
           )}
         </>
       }
-      aside={<UsersPageSidebar />}
+      aside={<UsersPageSidebar userStatistics={userStatistics} />}
     />
   );
 };

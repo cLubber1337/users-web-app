@@ -12,6 +12,8 @@ export const UsersList = ({ users, deleteUser }: Props) => {
   const [idSelectedCard, setIdSelectedCard] = useState<string | null>(null);
   const [scrollTop, setScrollTop] = useState(0);
 
+  console.log('LIST -------> RERENDER');
+
   const selectCard = useCallback((id: string) => {
     setIdSelectedCard((prev) => (prev === id ? null : id));
   }, []);

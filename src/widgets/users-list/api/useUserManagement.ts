@@ -1,7 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 import { fetchUsersList } from './fetch-users-list';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { IUser } from '@entities/user-card';
+import { calculateUserStatistics } from '@entities/user-statistics/model/calculate-user-statistics';
 
 export const useUserManagement = (results: number) => {
   const [data, setData] = useState<IUser[]>([]);
@@ -25,5 +26,7 @@ export const useUserManagement = (results: number) => {
     if (queryData) setData(queryData);
   }, [queryData]);
 
-  return { isPending, data, error, refetch, deleteUser };
+  const userStatistics = useMemo(() => calculateUserStatistics(data), [data]);
+
+  return { isPending, data, error, refetch, deleteUser, userStatistics };
 };

@@ -15,8 +15,9 @@ type Props = {
 };
 
 export const UserCard = memo(({ selectCard, isSelectedCard, deleteUser, user }: Props) => {
-  const { login, email, dob, name, phone, location } = user;
-  console.log('render---> user-card');
+  const { login, email, dob, name, phone, location, picture } = user;
+
+  console.log('UserCard -------> RERENDER');
 
   const selectCardHandler = () => {
     selectCard(login.uuid);
@@ -34,7 +35,7 @@ export const UserCard = memo(({ selectCard, isSelectedCard, deleteUser, user }: 
       )}
       <header className={s.header}>
         <UserCardHeader
-          image={'https://makeavatar.io/svgavatars/images/Male.webp'}
+          image={picture.medium}
           firstName={name.first}
           lastName={name.last}
           email={email}

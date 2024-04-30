@@ -1,1 +1,1 @@
-export { UsersPageSidebar } from './users-page-sidebar';
+export { UsersPageSidebar } from './ui/users-page-sidebar';
