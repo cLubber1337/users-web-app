@@ -6,6 +6,7 @@ type Props = {
 };
 
 export const UsersPageSidebar = ({ userStatistics }: Props) => {
+  // console.log('UsersPageSidebar -------> RENDER');
   return (
     <div className={s.sidebar}>
       <UserStatistics data={userStatistics} />

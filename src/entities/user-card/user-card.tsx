@@ -9,7 +9,7 @@ import { formatDate } from '@shared/helpers/format-date';
 
 type Props = {
   user: IUser;
-  selectCard: (id: string) => void;
+  selectCard: (id: string | null) => void;
   isSelectedCard: boolean;
   deleteUser: (id: string) => void;
 };
@@ -17,13 +17,14 @@ type Props = {
 export const UserCard = memo(({ selectCard, isSelectedCard, deleteUser, user }: Props) => {
   const { login, email, dob, name, phone, location, picture } = user;
 
-  console.log('UserCard -------> RERENDER');
+  // console.log('UserCard -------> RERENDER');
 
   const selectCardHandler = () => {
     selectCard(login.uuid);
   };
   const deleteUserHandler = () => {
     deleteUser(login.uuid);
+    selectCard(null);
   };
   return (
     <article className={clsx(s.userCard, isSelectedCard && s.userCardSelected)}>

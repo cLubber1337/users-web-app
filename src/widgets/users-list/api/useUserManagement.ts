@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { fetchUsersList } from './fetch-users-list';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { IUser } from '@entities/user-card';
-import { calculateUserStatistics } from '@entities/user-statistics/model/calculate-user-statistics';
+import { calculateUserStatistics } from '@entities/user-statistics';
 
 export const useUserManagement = (results: number) => {
   const [data, setData] = useState<IUser[]>([]);

@@ -30,8 +30,7 @@ export const UserCardHeader = ({
       </div>
       <div className={s.info}>
         <p className={s.userName}>
-          <span>{firstName}</span>
-          <span>{lastName}</span>
+          <span>{firstName}</span> <span>{lastName}</span>
         </p>
         <span className={s.email}>{email}</span>
       </div>
