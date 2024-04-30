@@ -1,3 +1,5 @@
+@import '@/app/styles/mixins';
+
 .userCardHeader {
   display: flex;
   column-gap: 16px;
@@ -8,6 +10,10 @@
   flex-direction: column;
   justify-content: center;
   gap: 4px;
+
+  span {
+    @include text-ellipsis;
+  }
 }
 
 .userName {

@@ -4,13 +4,21 @@ import clsx from 'clsx';
 
 type Props = {
   image: string;
-  userName: string;
+  firstName: string;
+  lastName: string;
   email: string;
   selectCard: () => void;
   isSelected?: boolean;
 };
 
-export const UserCardHeader = ({ image, userName, email, selectCard, isSelected }: Props) => {
+export const UserCardHeader = ({
+  image,
+  firstName,
+  lastName,
+  email,
+  selectCard,
+  isSelected
+}: Props) => {
   return (
     <div className={s.userCardHeader}>
       <div className={s.avatar}>
@@ -21,7 +29,10 @@ export const UserCardHeader = ({ image, userName, email, selectCard, isSelected 
         />
       </div>
       <div className={s.info}>
-        <span className={s.userName}>{userName}</span>
+        <p className={s.userName}>
+          <span>{firstName}</span>
+          <span>{lastName}</span>
+        </p>
         <span className={s.email}>{email}</span>
       </div>
     </div>

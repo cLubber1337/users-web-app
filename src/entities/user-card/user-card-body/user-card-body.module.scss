@@ -1,3 +1,5 @@
+@import '@/app/styles/mixins';
+
 .UserCardDescription {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -10,4 +12,8 @@
   font-size: 0.75rem;
   line-height: 1.7;
   color: var(--clr-secondary);
+
+  & + p {
+    @include text-ellipsis;
+  }
 }

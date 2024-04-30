@@ -1,12 +1,14 @@
-import s from './user-card-description.module.scss';
+import s from './user-card-body.module.scss';
 
 type Props = {
   phoneNo: string;
   birthday: string;
-  address: string;
+  city: string;
+  state: string;
+  country: string;
 };
 
-export const UserCardDescription = ({ phoneNo, birthday, address }: Props) => {
+export const UserCardBody = ({ phoneNo, birthday, city, state, country }: Props) => {
   return (
     <div className={s.UserCardDescription}>
       <p className={s.field}>Phone No</p>
@@ -16,7 +18,9 @@ export const UserCardDescription = ({ phoneNo, birthday, address }: Props) => {
       <p>{birthday}</p>
 
       <p className={s.field}>Address</p>
-      <p>{address}</p>
+      <p>
+        <span>{city}</span>, <span>{state}</span>, <span>{country}</span>
+      </p>
     </div>
   );
 };

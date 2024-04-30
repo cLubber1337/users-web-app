@@ -1,21 +1,24 @@
 import s from './user-card.module.scss';
 import { CardDeleteButton } from '@features/card-delete-button';
 import { UserCardHeader } from '@entities/user-card/user-card-header';
-import { UserCardDescription } from '@entities/user-card/user-card-description';
+import { UserCardBody } from '@entities/user-card/user-card-body';
 import clsx from 'clsx';
 import { memo } from 'react';
+import { IUser } from '@entities/user-card/types';
+import { formatDate } from '@shared/helpers/format-date';
 
 type Props = {
-  selectCard: (id: number) => void;
-  id: number;
+  user: IUser;
+  selectCard: (id: string) => void;
   isSelectedCard: boolean;
 };
 
-export const UserCard = memo(({ selectCard, id, isSelectedCard }: Props) => {
+export const UserCard = memo(({ selectCard, isSelectedCard, user }: Props) => {
+  const { login, email, dob, name, phone, location } = user;
   console.log('render---> user-card');
 
   const selectCardHandler = () => {
-    selectCard(id);
+    selectCard(login.uuid);
   };
   return (
     <article className={clsx(s.userCard, isSelectedCard && s.userCardSelected)}>
@@ -23,17 +26,20 @@ export const UserCard = memo(({ selectCard, id, isSelectedCard }: Props) => {
       <header className={s.header}>
         <UserCardHeader
           image={'https://makeavatar.io/svgavatars/images/Male.webp'}
-          userName={'John Doe'}
-          email={'w6NkA@example.com'}
+          firstName={name.first}
+          lastName={name.last}
+          email={email}
           selectCard={selectCardHandler}
           isSelected={isSelectedCard}
         />
       </header>
       <section className={s.description}>
-        <UserCardDescription
-          phoneNo={'(272) 790-0888'}
-          birthday={'11 November 1974'}
-          address={'Billings, Michigan, United States'}
+        <UserCardBody
+          phoneNo={phone}
+          birthday={formatDate(dob.date)}
+          city={location.city}
+          state={location.state}
+          country={location.country}
         />
       </section>
     </article>

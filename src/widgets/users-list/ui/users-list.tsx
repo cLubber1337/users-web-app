@@ -1,14 +1,17 @@
 import s from './users-list.module.scss';
-import { UserCard } from '@entities/user-card';
-import { useCallback, useRef, useState } from 'react';
+import { IUser, UserCard } from '@entities/user-card';
+import { useCallback, useState } from 'react';
 import clsx from 'clsx';
 
-export const UsersList = () => {
-  const [idSelectedCard, setIdSelectedCard] = useState<number | null>(null);
-  const usersListRef = useRef<HTMLDivElement>(null);
+type Props = {
+  users: IUser[];
+};
+
+export const UsersList = ({ users }: Props) => {
+  const [idSelectedCard, setIdSelectedCard] = useState<string | null>(null);
   const [scrollTop, setScrollTop] = useState(0);
 
-  const selectCard = useCallback((id: number) => {
+  const selectCard = useCallback((id: string) => {
     setIdSelectedCard((prev) => (prev === id ? null : id));
   }, []);
 
@@ -35,15 +38,14 @@ export const UsersList = () => {
           idSelectedCard && s.usersListSelected,
           s[`usersList${scrollTop}`]
         )}
-        ref={usersListRef}
         onScroll={handleScroll}>
-        {new Array(2).fill(1).map((_, i) => {
+        {users.map((user) => {
           return (
             <UserCard
-              id={i}
-              key={i}
+              key={user.login.uuid}
+              user={user}
               selectCard={selectCard}
-              isSelectedCard={idSelectedCard === i}
+              isSelectedCard={idSelectedCard === user.login.uuid}
             />
           );
         })}
