@@ -21,6 +21,7 @@ export const Avatar = ({ src, size = 56, onClick, fallback, className }: Props) 
         <img
           src={src}
           alt={''}
+          loading={'lazy'}
         />
       )}
 

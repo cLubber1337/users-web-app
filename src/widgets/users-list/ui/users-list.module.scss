@@ -25,6 +25,7 @@
 
   &Selected {
     overflow-y: visible;
+    padding-right: calc(var(--list-padding-right) + var(--scrollbar-width));
   }
 
   &::-webkit-scrollbar {
