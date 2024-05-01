@@ -8,6 +8,10 @@
   border: 1px solid var(--clr-midnight-blue);
   border-radius: var(--border-radius);
 
+  @media screen and (width <=768px) {
+    gap: 8px;
+  }
+
   &Selected {
     background-color: var(--clr-nightfall);
     border: 1px solid var(--clr-peach-blush);
@@ -18,4 +22,9 @@
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 50;
+}
+
+.header {
+  overflow: hidden;
 }

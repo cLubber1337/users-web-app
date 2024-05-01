@@ -5,4 +5,9 @@
   padding: 24px;
   background-color: var(--clr-nightfall);
   border-radius: var(--border-radius);
+
+  @media screen and (width <=768px) {
+    min-width: 100%;
+    padding: 12px;
+  }
 }

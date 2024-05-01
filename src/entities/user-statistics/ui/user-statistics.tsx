@@ -9,7 +9,7 @@ export const UserStatistics = ({ data }: Props) => {
   const { totalUsers, sections } = data;
 
   return (
-    <>
+    <div className={s.statistics}>
       <section>
         <h2 className={s.title}>{totalUsers} Users</h2>
       </section>
@@ -32,6 +32,6 @@ export const UserStatistics = ({ data }: Props) => {
           </section>
         );
       })}
-    </>
+    </div>
   );
 };

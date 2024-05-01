@@ -11,7 +11,8 @@ export const useUserManagement = (results: number) => {
     isPending,
     error,
     refetch,
-    data: queryData
+    data: queryData,
+    isRefetching
   } = useQuery({
     queryKey: ['users', results],
     queryFn: async () => await fetchUsersList(results),
@@ -28,5 +29,14 @@ export const useUserManagement = (results: number) => {
 
   const userStatistics = useMemo(() => calculateUserStatistics(data), [data]);
 
-  return { isPending, data, error, refetch, deleteUser, userStatistics };
+  console.log(isRefetching);
+  return {
+    isPending,
+    data,
+    error,
+    refetch,
+    deleteUser,
+    userStatistics,
+    isRefetching
+  };
 };

@@ -2,18 +2,34 @@
   --users-page-padding-x: 32px;
 
   display: grid;
+  grid-template: 1fr auto / 1fr;
   grid-template-areas:
     'header header'
     'main   aside';
-  grid-template-columns: 1fr auto;
+  grid-template-rows: var(--header-height) 1fr;
+  min-height: 100dvh;
   padding-bottom: var(--users-page-padding-x);
   column-gap: 6px;
+
+  @media screen and (width <= 768px) {
+    --header-height: 86px;
+
+    grid-template-areas:
+      'header header'
+      'aside   aside'
+      'main   main';
+  }
 }
 
 .header {
   grid-area: header;
   padding-top: 32px;
   padding-bottom: 24px;
+
+  @media screen and (width <=768px) {
+    padding-top: 16px;
+    padding-bottom: 8px;
+  }
 }
 
 .main {
@@ -24,4 +40,8 @@
   grid-area: aside;
   width: 100%;
   max-width: var(--aside-width);
+
+  @media screen and (width <= 768px) {
+    margin-bottom: 16px;
+  }
 }

@@ -1,0 +1,7 @@
+@import '@/app/styles/mixins';
+
+.loader {
+  @include abs-center;
+
+  font-size: 1.5rem;
+}

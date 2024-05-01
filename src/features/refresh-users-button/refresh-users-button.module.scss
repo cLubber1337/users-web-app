@@ -1,9 +1,16 @@
 .button {
-  font-weight: 600;
-  color: var(--clr-coral);
   padding: 10px 16px;
+  color: var(--clr-coral);
+  font-weight: 600;
 
-  &:hover {
-    opacity: 0.8;
+  @media (hover: hover) {
+    &:hover {
+      background-color: rgba(255 255 255 / 5%);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
   }
 }

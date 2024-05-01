@@ -2,17 +2,18 @@ import s from './users-list.module.scss';
 import { IUser, UserCard } from '@entities/user-card';
 import { useCallback, useState } from 'react';
 import clsx from 'clsx';
+import { Loader } from '@shared/ui';
 
 type Props = {
   users: IUser[];
   deleteUser: (userId: string) => void;
+  isLoading: boolean;
+  error: Error | null;
 };
 
-export const UsersList = ({ users, deleteUser }: Props) => {
+export const UsersList = ({ users, deleteUser, error, isLoading }: Props) => {
   const [idSelectedCard, setIdSelectedCard] = useState<string | null>(null);
   const [scrollTop, setScrollTop] = useState(0);
-
-  // console.log('LIST -------> RERENDER');
 
   const selectCard = useCallback((id: string | null) => {
     setIdSelectedCard((prev) => (prev === id ? null : id));
@@ -42,17 +43,22 @@ export const UsersList = ({ users, deleteUser }: Props) => {
           s[`usersList${scrollTop}`]
         )}
         onScroll={handleScroll}>
-        {users.map((user) => {
-          return (
-            <UserCard
-              key={user.login.uuid}
-              user={user}
-              selectCard={selectCard}
-              isSelectedCard={idSelectedCard === user.login.uuid}
-              deleteUser={deleteUser}
-            />
-          );
-        })}
+        {error && <div>{error.message}</div>}
+        {isLoading ? (
+          <Loader />
+        ) : (
+          users.map((user) => {
+            return (
+              <UserCard
+                key={user.login.uuid}
+                user={user}
+                selectCard={selectCard}
+                isSelectedCard={idSelectedCard === user.login.uuid}
+                deleteUser={deleteUser}
+              />
+            );
+          })
+        )}
       </div>
       <div className={clsx(!idSelectedCard && scrollTop !== 100 && s.shadow, s.shadowBottom)}></div>
     </div>

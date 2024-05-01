@@ -1,6 +1,18 @@
+.statistics {
+  @media screen and (width <=768px) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
 .section {
   border-top: 1px solid var(--clr-secondary);
   padding-block: 24px;
+
+  @media screen and (width <=768px) {
+    border-top: none;
+    padding-block: 0;
+  }
 }
 
 .title {
@@ -8,6 +20,10 @@
   font-weight: 600;
   font-size: 1.25rem;
   line-height: 1.2;
+
+  @media screen and (width <=768px) {
+    font-size: 1rem;
+  }
 }
 
 .subtitle {
@@ -15,6 +31,10 @@
   font-weight: 600;
   font-size: 1rem;
   line-height: 1.25;
+
+  @media screen and (width <=768px) {
+    padding-bottom: 8px;
+  }
 }
 
 .property {
@@ -24,4 +44,8 @@
   color: var(--clr-secondary);
   font-size: 0.75rem;
   line-height: 1.7;
+
+  @media screen and (width <=768px) {
+    margin-right: 8px;
+  }
 }

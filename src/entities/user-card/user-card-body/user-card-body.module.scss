@@ -3,15 +3,18 @@
 .UserCardDescription {
   display: grid;
   grid-template-columns: auto 1fr;
-  column-gap: 16px;
-  row-gap: 12px;
+  gap: 12px 16px;
+
+  @media screen and (width <=768px) {
+    gap: 6px 8px;
+  }
 }
 
 .field {
+  color: var(--clr-secondary);
   font-weight: 500;
   font-size: 0.75rem;
   line-height: 1.7;
-  color: var(--clr-secondary);
 
   & + p {
     @include text-ellipsis;

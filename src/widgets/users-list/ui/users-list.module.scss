@@ -18,8 +18,13 @@
   overflow-y: auto;
   scrollbar-gutter: stable;
 
+  @media screen and (width <=768px) {
+    grid-template-columns: repeat(auto-fill, auto);
+    height: calc(100vh - var(--header-height) - 210px);
+  }
+
   &Selected {
-    overflow-y: hidden;
+    overflow-y: visible;
   }
 
   &::-webkit-scrollbar {
@@ -35,6 +40,10 @@
     background-color: var(--scrollbar-thumb);
     border-radius: var(--scrollbar-radius);
   }
+}
+
+body:has(.usersListSelected) {
+  overflow: hidden;
 }
 
 .usersList1 {

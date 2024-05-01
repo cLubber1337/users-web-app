@@ -8,8 +8,8 @@
 .info {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 4px;
+  justify-content: center;
 
   span {
     @include text-ellipsis;
@@ -17,9 +17,12 @@
 }
 
 .userName {
+  overflow: hidden;
   font-weight: 600;
   font-size: 1.25rem;
   line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .selectedAvtar {

@@ -7,16 +7,25 @@ type Props = {
   refetchUsersList: () => void;
   onSearch: (e: ChangeEvent<HTMLInputElement>) => void;
   searchValue?: string;
+  isRefetching?: boolean;
 };
 
-export const UsersPageHeader = ({ refetchUsersList, onSearch, searchValue }: Props) => {
+export const UsersPageHeader = ({
+  refetchUsersList,
+  onSearch,
+  searchValue,
+  isRefetching
+}: Props) => {
   return (
     <div className={s.header}>
       <Search
         onSearch={onSearch}
         value={searchValue}
       />
-      <RefreshUsersButton onClick={refetchUsersList} />
+      <RefreshUsersButton
+        onClick={refetchUsersList}
+        isRefetching={isRefetching}
+      />
     </div>
   );
 };

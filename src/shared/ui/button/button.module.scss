@@ -2,6 +2,7 @@
 
 .button {
   @include reset-button;
+
   cursor: pointer;
   user-select: none;
 }
