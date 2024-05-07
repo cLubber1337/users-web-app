@@ -1,6 +1,6 @@
 import s from './users-list.module.scss';
 import { IUser, UserCard } from '@entities/user-card';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import clsx from 'clsx';
 import { Loader } from '@shared/ui';
 
@@ -32,6 +32,10 @@ export const UsersList = ({ users, deleteUser, error, isLoading }: Props) => {
       setScrollTop(position);
     }
   }, []);
+
+  useEffect(() => {
+    setIdSelectedCard(null);
+  }, [isLoading]);
 
   return (
     <div className={s.wrapper}>

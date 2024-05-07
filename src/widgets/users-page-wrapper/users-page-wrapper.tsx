@@ -13,6 +13,7 @@ export const UsersPageWrapper = ({ header, main, aside }: Props) => {
       <header className={s.header}>{header}</header>
       <main className={s.main}>{main}</main>
       <aside className={s.aside}>{aside}</aside>
+      <footer className={s.footer}></footer>
     </div>
   );
 };
