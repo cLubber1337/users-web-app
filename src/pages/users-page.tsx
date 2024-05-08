@@ -6,7 +6,7 @@ import { searchOptions, useSearch } from '@features/search';
 
 export const UsersPage = () => {
   const { isPending, data, error, refetch, deleteUser, userStatistics, isRefetching } =
-    useUserManagement(2);
+    useUserManagement(500);
   const { debouncedOnChangeValue, searchValue, searchResults } = useSearch(data, searchOptions);
 
   return (
